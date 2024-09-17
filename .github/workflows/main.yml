@@ -85,5 +85,5 @@ jobs:
         uses: ./.github/actions/store-evaluation
         with:
           evaluation-data: ${{ steps.evaluator.outputs.result }}
-          environment: staging
+          environment: production
           token: ${{ secrets.GIT_HUB_PAT }}
