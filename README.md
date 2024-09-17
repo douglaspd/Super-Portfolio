@@ -62,9 +62,9 @@ brew install mysql pkg-config
 
 3. Clone o repositório
 
-- Use o comando: `git clone git@github.com:tryber/python-0x-projeto-super-portfolio.git`
+- Use o comando: `git clone git@github.com:tryber/python-037-python-projeto-super-portfolio.git`
 - Entre na pasta do repositório que você acabou de clonar:
-  - `cd python-0x-projeto-super-portfolio`
+  - `cd python-037-python-projeto-super-portfolio`
 
 4. Crie uma branch a partir da branch `main`
 
@@ -253,7 +253,7 @@ Você sabia que o LinkedIn é a principal rede social profissional e compartilha
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário.
 **Leva menos de 3 minutos!**
 
-[Formulário de avaliação do projeto](https://be-trybe.typeform.com/to/ZTeR4IbH)
+[Formulário de avaliação do projeto](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_hidden=CH37-PYTHON&template=betrybe/python-0x-projeto-super-portfolio)
 
 </details>
 
