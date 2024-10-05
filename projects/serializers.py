@@ -18,4 +18,5 @@ class ProjectSerializer(serializers.ModelSerializer):
             "github_url",
             "keyword",
             "key_skill",
+            "profile",
         ]
