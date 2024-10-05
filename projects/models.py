@@ -15,3 +15,33 @@ class Profile(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+class Project(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.TextField()
+    github_url = models.URLField()
+    keyword = models.CharField(max_length=50)
+    key_skill = models.CharField(max_length=50)
+    profile = models.ForeignKey(
+        Profile,
+        on_delete=models.CASCADE,
+        related_name="projects",
+    )
+
+    def clean(self):
+        if any(
+            len(field) > 500
+            for field in [
+                self.name,
+                self.description,
+                self.keyword,
+                self.key_skill,
+            ]
+        ):
+            raise ValidationError(
+                "Os campos não podem ter mais que 500 caracteres"
+            )
+
+    def __str__(self) -> str:
+        return self.name
