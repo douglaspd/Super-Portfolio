@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{profile.name}} - Detalhes do Perfil
+{% endblock %}
+
+{% block content %}
+<div>
+    <h1>Detalhes do Perfil: {{ profile.name }}</h1>
+    <p><strong>GitHub:</strong> <a href="{{ profile.github }}">{{ profile.github }}</a></p>
+    <p><strong>Linkedin:</strong> <a href="{{ profile.linkedin }}">{{ profile.linkedin }}</a></p>
+    <p><strong>BIO</strong>{{ profile.bio }}</p>
+</div>
+{% endblock %}
