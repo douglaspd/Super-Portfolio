@@ -1,14 +1,45 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    {{profile.name}} - Detalhes do Perfil
+    {{ profile.name }} - Detalhes do Perfil
 {% endblock %}
 
 {% block content %}
 <div>
     <h1>Detalhes do Perfil: {{ profile.name }}</h1>
     <p><strong>GitHub:</strong> <a href="{{ profile.github }}">{{ profile.github }}</a></p>
-    <p><strong>Linkedin:</strong> <a href="{{ profile.linkedin }}">{{ profile.linkedin }}</a></p>
-    <p><strong>BIO</strong>{{ profile.bio }}</p>
+    <p><strong>LinkedIn:</strong> <a href="{{ profile.linkedin }}">{{ profile.linkedin }}</a></p>
+    <p><strong>BIO:</strong> {{ profile.bio }}</p>
+
+    <h2>Projetos</h2>
+    {% if profile.projects.count > 0 %}
+        <ul>
+            {% for project in profile.projects.all %}
+                <li>
+                    <strong>Projeto:</strong> {{ project.name }} <br>
+                    <strong>Descrição:</strong> {{ project.description }} <br>
+                    <strong>GitHub URL:</strong> <a href="{{ project.github_url }}">{{ project.github_url }}</a> <br>
+                    <strong>Palavra-chave:</strong> {{ project.keyword }} <br>
+                    <strong>Habilidade-chave:</strong> {{ project.key_skill }} <br>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Este perfil ainda não possui projetos.</p>
+    {% endif %}
+
+    <h2>Certificados</h2>
+    {% if profile.certificates.count > 0 %}
+        <ul>
+            {% for certificate in profile.certificates.all %}
+                <li>
+                    <strong>Certificado:</strong> {{ certificate.name }} <br>
+                    <strong>Instituição Certificadora:</strong> {{ certificate.certifying_institution.name }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Este perfil ainda não possui certificados.</p>
+    {% endif %}
 </div>
 {% endblock %}

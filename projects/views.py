@@ -24,11 +24,12 @@ class ProfileViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         if request.method == "GET":
             profile = self.get_object()
+            certificates = profile.certificates.all()
 
             return render(
                 request,
                 "profile_detail.html",
-                {"profile": profile},
+                {"profile": profile, "certificates": certificates},
             )
         return super().retrieve(request, *args, **kwargs)
 
